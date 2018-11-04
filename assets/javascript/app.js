@@ -45,7 +45,7 @@
         for (var i = 0; i < foods.length; i++) {
 
           var a = $("<button>");
-          a.addClass("food-btn btn-primary");
+          a.addClass("food-btn btn-primary btn-lg");
           a.attr("data-name", foods[i]);
           a.text(foods[i]);
           $("#buttons-view").append(a);
