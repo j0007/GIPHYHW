@@ -49,7 +49,6 @@
           a.attr("data-name", foods[i]);
           a.text(foods[i]);
           $("#buttons-view").append(a);
-          $("#buttons-view").append(" . ");
         }
       }
 
