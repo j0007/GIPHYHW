@@ -18,18 +18,19 @@
 
           var foodDiv = $("<div class='food'>");
 
-        //Ratings
-          var rating = results[i].rating;
-          var rate = $("<p>").text("Rating: " + rating);
-
-          foodDiv.append(rate);
-
         // GIF Image
           var imgURL = results[i].images.fixed_width.url;
           var image = $("<img>").attr("src", imgURL);
           
           foodDiv.append(image);
 
+
+        //Ratings
+          var rating = results[i].rating;
+          var rate = $("<p>").text("Rating: " + rating);
+
+        foodDiv.append(rate);
+        
         // Display all GIFS Prior
           $("#food-view").prepend(foodDiv);
                     }
@@ -48,16 +49,14 @@
           a.attr("data-name", foods[i]);
           a.text(foods[i]);
           $("#buttons-view").append(a);
+          $("#buttons-view").append(" . ");
         }
       }
 
-      // This function handles events where a movie button is clicked
+      //When button is clicked
       $("#add-food").on("click", function(event) {
         event.preventDefault();
-        // This line grabs the input from the textbox
         var newfoods = $("#food-input").val().trim();
-        console.log(newfoods)
-        // Adding movie from the textbox to our array
         foods.push(newfoods);
 
         renderButtons();
